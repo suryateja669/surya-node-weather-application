@@ -13,7 +13,6 @@ forecastForm.addEventListener('submit',(e)=>{
             if(data.error){
                 //console.log("Error: ",data.error)
                 para1.textContent=data.error;
-
             }
             else{
                 //console.log(data);
