@@ -1,0 +1,29 @@
+#style{
+    display: inline-block;
+    background-color: aqua;
+    padding:40px;
+    width:30%;
+    height:auto;
+    text-align:center;
+    
+}
+
+#style a{
+    margin:10px;
+    color:red;
+    text-decoration: none;
+    text-align:center;
+}
+
+
+/* 
+ul li{
+    list-style: none;
+    color:red;
+    margin:5px;
+
+} */
+
+body{
+    text-align:center;
+}
