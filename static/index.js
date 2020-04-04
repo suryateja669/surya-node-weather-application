@@ -8,7 +8,7 @@ forecastForm.addEventListener('submit',(e)=>{
     const address=forecastInput.value;
     para1.textContent="Loading...!"
     para2.textContent="";
-    fetch('http://localhost:3000/weather?address='+encodeURIComponent(address)).then((response)=>{
+    fetch('/weather?address='+encodeURIComponent(address)).then((response)=>{
         response.json().then((data)=>{
             if(data.error){
                 //console.log("Error: ",data.error)

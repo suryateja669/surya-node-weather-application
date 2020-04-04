@@ -6,6 +6,8 @@ const forecast=require('../utils/forecast');
 const express=require('express');
 const app=express();
 
+const port=process.env.PORT ||3000;
+
 
 const partialDirectory=path.join(__dirname,'../partials');
 
@@ -75,6 +77,6 @@ app.get('*',(req,res)=>{
 
 
 
-app.listen(3000,(err,res)=>{
+app.listen(port,(err,res)=>{
     console.log("Server is up and running at port 3000!");
 })
