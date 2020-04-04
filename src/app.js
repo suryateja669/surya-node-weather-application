@@ -21,7 +21,7 @@ hbs.registerPartials(partialDirectory);
 app.get('',(req,res)=>{
     res.render("index",{
         title:"My title",
-        message:"Hello dang dang!",
+        message:"This is a weather app!",
         name:"Surya"
     });
 });
