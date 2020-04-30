@@ -22,22 +22,37 @@ hbs.registerPartials(partialDirectory);
 
 app.get('',(req,res)=>{
     res.render("index",{
-        title:"My title",
-        message:"This is a weather app!",
-        name:"Surya"
+        title:"Weather app",
+        message:"This is a weather app!"
     });
 });
 
 app.get('/help',(req,res)=>{
     res.render("help",{
-      title:"Help!",
-      name:"Surya"  
+      title:"Weather app",
+      message:"Welcome to the help section.You can click the weather link above to start using the weather application.To know more about the app click 'About'"  
     })
 });
+
+app.get('index/*',(req,res)=>{
+    res.send("Requested url not found!");
+})
 
 app.get('/help/*',(req,res)=>{
     res.send("Help not found!");
 })
+
+app.get('/weather/*',(req,res)=>{
+    res.send("Requested url not found!");
+})
+
+app.get('/about',(req,res)=>{
+        return res.render('about',{title:"Weather app"
+    }
+            
+        )  
+    }
+)
 
 
 app.get('/weather',(req,res)=>{
@@ -46,6 +61,7 @@ app.get('/weather',(req,res)=>{
             error:"Please provide an address!"
         })  
     }
+
 const address=req.query.address;
     geocode(address,(error,{latitude,longitude,location}={})=>{
         if(error){
@@ -72,7 +88,9 @@ const address=req.query.address;
 })
 
 app.get('*',(req,res)=>{
-    res.send("My 404 page!");
+    res.render("404",{
+        errorMessage:"The requested url is not present.Please click on the above links to use weather app."
+    });
 })
 
 
