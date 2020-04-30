@@ -52,7 +52,7 @@ const address=req.query.address;
             return res.send(error);
         }
     forecast(latitude,longitude,(error,forecastData)=>{
-        if(error){
+         if(error){
             return res.send(error);
         }
         res.send({forecast:forecastData,
